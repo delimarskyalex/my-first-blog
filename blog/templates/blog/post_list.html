@@ -2,6 +2,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
     {% for post in posts %}
         <div class="post">
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
@@ -11,4 +12,5 @@
             </div>
         </div>
     {% endfor %}
+    <a href="{% url 'post_new' %}"<button class="button button1">New Post</button></a>
 {% endblock %}

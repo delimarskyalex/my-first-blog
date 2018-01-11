@@ -4,10 +4,13 @@
     {% if form.errors %}
         <p>nume sau parola incorecta,mai incercati...</p>
     {% endif %}
-
+<center>
+  <div class="alert alert-danger alert-dismissable fade in">
+    <strong>Atentie</strong> Mai intai de toate trebuie sa va logati!
+  </div>
     <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-        <table style="margin-top:10px;">
+      <center><table>
         <tr>
             <td>{{ form.username.label_tag }}</td>
             <td>{{ form.username }}</td>
@@ -16,9 +19,9 @@
             <td>{{ form.password.label_tag }}</td>
             <td>{{ form.password }}</td>
         </tr>
-        </table>
+      </table></center>
 
-        <input type="submit" value="login" />
+        <center><input type="submit" value="login" /></center>
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
 {% endblock %}
